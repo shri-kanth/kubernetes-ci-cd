@@ -13,11 +13,11 @@ node {
     env.BUILDIMG=imageName
     
     env.COMMIT_TAG=commitTag    
-    sh 'echo ${commitTag}'
-    sh 'echo $commitTag'
     sh "echo ${commitTag}"
+    sh 'printf "\nENV BUILD_ID ${commitTag}" 
+    sh 'printf "\nENV BUILD_ID "$COMMIT_TAG' 
     sh 'echo $COMMIT_TAG'
-    sh 'printf "\nENV BUILD_ID ${commitTag}" >> applications/hello-kenzan/Dockerfile'
+    sh 'printf "\nENV BUILD_ID "$COMMIT_TAG >> applications/hello-kenzan/Dockerfile'
     sh 'cat applications/hello-kenzan/Dockerfile'
     
     stage "Build"
