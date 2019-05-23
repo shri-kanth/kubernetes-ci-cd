@@ -17,7 +17,7 @@ node {
     sh 'echo $commitTag'
     sh "echo ${commitTag}"
     sh 'echo $COMMIT_TAG'
-    sh 'echo ENV BUILD_ID ${commitTag} >> applications/hello-kenzan/Dockerfile'
+    sh 'printf "\nENV BUILD_ID ${commitTag}" >> applications/hello-kenzan/Dockerfile'
     sh 'cat applications/hello-kenzan/Dockerfile'
     
     stage "Build"
