@@ -11,7 +11,8 @@ node {
     registryHost = "127.0.0.1:30400/"
     imageName = "${registryHost}${appName}"
     env.BUILDIMG=imageName
-
+    sh 'echo ENV BUILD_ID ${commitTag} >> application/hello-kenzan/Dockerfile'
+    sh 'cat application/hello-kenzan/Dockerfile'
     stage "Build"
     
         sh "docker build -t ${imageName}:${commitTag} -t ${imageName}:latest -f applications/hello-kenzan/Dockerfile applications/hello-kenzan"
