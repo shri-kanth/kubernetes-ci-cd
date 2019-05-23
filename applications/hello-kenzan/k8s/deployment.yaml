@@ -31,6 +31,9 @@ spec:
     spec:
       containers:
       - image: 127.0.0.1:30400/hello-kenzan:latest
+        env:
+	- name: GIT_COMMIT
+          value: YOLO
         name: hello-kenzan
         ports:
         - containerPort: 80
