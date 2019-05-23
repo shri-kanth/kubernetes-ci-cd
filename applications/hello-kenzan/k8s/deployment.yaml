@@ -32,7 +32,7 @@ spec:
       containers:
       - image: 127.0.0.1:30400/hello-kenzan:latest
         env:
-	- name: GIT_COMMIT
+        - name: GIT_COMMIT
           value: {GIT_COMMIT}
         name: hello-kenzan
         ports:
