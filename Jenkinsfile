@@ -18,7 +18,7 @@ node {
     
     stage "Push"
 
-        sh "docker push ${imageName}:${commitTag}"
+        sh "docker push ${imageName}:latest"
 
     stage "Deploy"
 
