@@ -20,6 +20,7 @@ node {
     sh 'printf "\nENV BUILD_ID "$COMMIT_TAG >> applications/hello-kenzan/Dockerfile'
     sh "sed -i s/{GIT_COMMIT}/${commitTag}/g applications/${appName}/k8s/*.yaml"
     sh 'cat applications/hello-kenzan/Dockerfile'
+    sh 'cat applications/hello-kenzan/k8s/development.yaml'
     
     stage "Build"
     
